@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+                        <title></title>
+        <style>
+        * {
+    margin: 0px;
+    padding: 0px;
+}
+
+.bg {
+    background-color: #222222;
+    height: 250px;
+    width: 100%;
+    margin-top: 100px;
+}
+.controlpause{
+    width: 100%;
+    height: 1000px;
+    background-color: gray;
+    opacity: 0.9;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+}
+.bird {
+    position: absolute;
+    background-color: mediumvioletred;
+    width: 2%;
+    height: 15px;
+    left: 40%;
+    top: 185px;
+}
+.btn-ctrl-bird{
+    position: fixed;
+    top: 0px;
+    width: 100%;
+    height: ;
+}
+
+.up,.down{
+    width: 50%;
+    border: none;
+    opacity: 0;
+    height: 350px;
+}
+.down{
+    float: left;
+}
+.up{
+    float: right;
+}
+.rec1,
+.rec2,
+.rec3,
+.rec4,
+.rec5 {
+    left: 0px;
+    opacity: 0;
+    position: absolute;
+    width: 4%;
+    height: 250px;
+    background-color: #262626;
+}
+.rec1 {
+    animation: move 10s linear infinite;
+    -webkit-animation: move 10s linear infinite;
+    -ms-animation: move 10s linear infinite;
+    -moz-animation: move 10s linear infinite;
+    -o-animation: move 10s linear infinite;
+}
+.rec2 {
+    animation: move 10s linear 2s infinite;
+    -webkit-animation: move 10s linear 2s infinite;
+    -ms-animation: move 10s linear 2s infinite;
+    -moz-animation: move 10s linear 2s infinite;
+    -o-animation: move 10s linear 2s infinite;
+}
+.rec3 {
+    animation: move 10s linear 4s infinite;
+    -webkit-animation: move 10s linear 4s infinite;
+    -ms-animation: move 10s linear 4s infinite;
+    -moz-animation: move 10s linear 4s infinite;
+    -o-animation: move 10s linear 4s infinite;
+
+}
+.rec4 {
+    animation: move 10s linear 6s infinite;
+    -webkit-animation: move 10s linear 6s infinite;
+    -ms-animation: move 10s linear 6s infinite;
+    -moz-animation: move 10s linear 6s infinite;
+    -o-animation: move 10s linear 6s infinite;
+
+}
+.rec5 {
+    animation: move 10s linear 8s infinite;
+    -webkit-animation: move 10s linear 8s infinite;
+    -ms-animation: move 10s linear 8s infinite;
+    -moz-animation: move 10s linear 8s infinite;
+    -o-animation: move 10s linear 8s infinite;
+
+}
+@-o-keyframes move {
+    0% {
+        left: 96%;
+        opacity: 1;
+    }
+    50% {
+        left50%;
+        opacity: 1;
+    }
+    100% {
+        left: -20px;
+        opacity: 0;
+    }
+}
+@keyframes move {
+    0% {
+        left: 96%;
+        opacity: 1;
+    }
+    50% {
+        left50%;
+        opacity: 1;
+    }
+    100% {
+        left: -20px;
+        opacity: 0;
+    }
+}
+@-moz-keyframes move {
+    0% {
+        left: 96%;
+        opacity: 1;
+    }
+    50% {
+        left50%;
+        opacity: 1;
+    }
+    100% {
+        left: -20px;
+        opacity: 0;
+    }
+}
+@-ms-keyframes move {
+    0% {
+        left: 96%;
+        opacity: 1;
+    }
+    50% {
+        left50%;
+        opacity: 1;
+    }
+    100% {
+        left: -20px;
+        opacity: 0;
+    }
+}
+@-webkit-keyframes move {
+    0% {
+        left: 96%;
+        opacity: 1;
+    }
+    50% {
+        left50%;
+        opacity: 1;
+    }
+    100% {
+        left: -20px;
+        opacity: 0;
+    }
+}
+.white1,
+.white2,
+.white3,
+.white4,
+.white5 {
+    position: relative;
+    top: 50px;
+    background-color: white;
+    width: 100%;
+    height: 80px;
+}
+.btn-ctrl-game{
+    position: fixed;
+    text-align: center;
+    width: 100%;
+}
+.continue{
+    border: none;
+    float: left;
+    background-color: forestgreen;
+    width: 100px;
+    height: 100px;
+}
+.restrat{
+    float: left;
+    display: none;
+    border: none;
+    width: 100px;
+    height: 100px;
+    background-color: red;
+}
+.continue,.restrat{
+    border-radius: 100%;
+}
+.moving{
+    border: none;
+    width: 100%;
+    height: 40px;
+    background-color: forestgreen;
+}
+.pause{
+    text-align: center;
+    position: fixed;
+    top: 150px;
+    left: -webkit-calc(50% - 100px);
+    left: calc(50% - 100px);
+    left: -moz-calc(50% - 100px);
+}
+
+        </style>
+    </head>
+
+    <body>
+        <div class="pause">
+
+        </div>
+        <div class="bg">
+            <div class="rec1 rec">
+                <div class="white1 whiterec">
+
+                </div>
+            </div>
+            <div class="rec2 rec">
+                <div class="white2 whiterec">
+
+                </div>
+            </div>
+            <div class="rec3 rec">
+                <div class="white3 whiterec">
+
+                </div>
+            </div>
+            <div class="rec4 rec">
+                <div class="white4 whiterec">
+
+                </div>
+            </div>
+            <div class="rec5 rec">
+                <div class="white5 whiterec">
+
+                </div>
+            </div>
+            <div class="bird" id="bird">
+
+            </div>
+        </div>
+        <div class="btn-ctrl-bird">
+
+            <button class="down" id="down">下</button>
+            <button class="up" id="up">上</button>
+        </div>
+        <div id="control">
+
+        </div>
+        <div class="btn-ctrl-game" id="btn-ctrl-game">
+            <button class="moving" id="continue" onclick="stopClick()">暂停</button>
+            <button class="restrat" id="restart" onclick="window.location.reload();">重新开始</button>
+        </div>
+    </body>
+    <script>
+    var posY = 235;
+var posYReal = "335px";
+var btnAddUp = 26;
+var btnAddDown = 24;
+var keyBoardAdd = 20;
+var birdDownAdd = 1;
+var space = 0;
+init();
+
+function init() {
+    addListener();
+    down();
+    posYWhite();
+    validate();
+}
+
+function addListener() {
+    document.getElementById("up").addEventListener("click", function(e) {
+        posY -= btnAddUp;
+    });
+    document.getElementById("up").addEventListener("dblclick", function(e) {
+        posY -= btnAddUp;
+    });
+    document.getElementById("down").addEventListener("click", function(e) {
+        posY += btnAddDown;
+    });
+    document.getElementById("down").addEventListener("dblclick", function(e) {
+        posY += btnAddDown;
+    });
+    document.onkeydown = function(event) {
+        var e = event || window.event || arguments.callee.caller.arguments[0];
+        if (e && e.keyCode == 38) {
+            posY -= keyBoardAdd;
+        }
+        if (e && e.keyCode == 40) {
+            posY += keyBoardAdd;
+        }
+    }
+}
+
+function down() {
+    posY += birdDownAdd;
+    if (posY > 335) {
+        posY = 335;
+    }
+    if (posY < 100) {
+        posY = 100;
+    }
+    posYReal = posY + "px";
+    document.getElementById("bird").style.top = posYReal;
+    window.setTimeout("down()", 30);
+}
+
+function posYWhite() {
+    var first = Math.random();
+    var middle = Math.random();
+    var last = Math.random();
+    var total = Math.round((first * 1000 + middle * 100 + last) % 170);
+    var posWhite = total + "px";
+    var rec = document.getElementsByClassName("rec");
+    var whiteSpace = document.getElementsByClassName("whiterec");
+    for (var i = 0; i < whiteSpace.length; i++) {
+        if (rec[i].offsetLeft <= 0)
+            whiteSpace[i].style.top = posWhite;
+    }
+    validate();
+    window.setTimeout("posYWhite()", 1);
+
+}
+
+function validate() {
+    var totalRec = document.getElementsByClassName("rec");
+    var whiteSpace = document.getElementsByClassName("whiterec");
+    var bird = document.getElementById("bird");
+    var birdX = bird.offsetLeft;
+    var birdY = bird.offsetTop;
+    var birdHeight = bird.offsetHeight;
+    var birdWidth = bird.offsetWidth;
+    for (var i = 0; i < totalRec.length; i++) {
+        if (totalRec[i].offsetLeft < birdX + birdWidth) {
+            if (totalRec[i].offsetLeft > (birdX - totalRec[i].clientWidth)) {
+                if ((birdY > whiteSpace[i].offsetTop + 100) && (birdY + birdHeight < whiteSpace[i].offsetTop + 180))
+                    console.log("success!");
+                else {
+                    pause(true);
+                    document.getElementById("continue").remove();
+                }
+            }
+        }
+    }
+}
+
+function stopClick() {
+    if (space % 2 == 1) {
+        space++;
+        pause(false);
+    } else {
+        space++;
+        pause(true);
+    }
+}
+
+function pause(isPause) {
+    var rec = document.getElementsByClassName("rec");
+    var bird = document.getElementById("bird");
+    if (isPause) {
+        for (var i = 0; i < rec.length; i++) {
+            playState(rec[i], "paused")
+        }
+        document.getElementById("restart").style.display = "block"
+        document.getElementById("continue").innerText = "继续";
+        document.getElementById("continue").innerHTML="继续";
+        document.getElementById("control").className = "controlpause";
+        document.getElementById("btn-ctrl-game").className="pause";
+        document.getElementById("continue").className="continue";
+    } else {
+        for (var i = 0; i < rec.length; i++) {
+            playState(rec[i], "running");
+        }
+        document.getElementById("restart").style.display = "none";
+        document.getElementById("continue").innerText = "暂停";
+        document.getElementById("continue").innerHTML="暂停"
+        document.getElementById("control").className = "";
+        document.getElementById("continue").className="moving";
+        document.getElementById("btn-ctrl-game").className="btn-ctrl-game";
+    }
+    birdCtrl(!isPause);
+}
+
+function playState(elem, state) {
+    elem.style.animationPlayState = state;
+    elem.style.MozAnimationPlayState = state;
+    elem.style.msAnimationPlayState = state;
+    elem.style.webkitAnimationPlayState = state;
+}
+
+function birdCtrl(ismove) {
+    if (ismove) {
+        addUp = 26;
+        addDown = 24;
+        birdDownAdd = 1;
+        keyBoardAdd = 20;
+    } else {
+        addUp = 0;
+        addDown = 0;
+        birdDownAdd = 0;
+        keyBoardAdd = 0;
+    }
+}
+    </script>
+
+</html>
