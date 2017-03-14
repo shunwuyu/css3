@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en" class="istouch isandroid ischrome" style="font-size: 58.5938px;">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <style>
+  a, abbr, acronym, address, article, aside, audio, b, big, blockquote, body, canvas, caption, center, cite, code, dd, del, details, dfn, div, dl, dt, em, fieldset, figcaption, figure, footer, form, h1, h2, h3, h4, h5, h6, header, hgroup, html, i, img, input, ins, kbd, label, legend, li, mark, menu, nav, ol, output, p, pre, q, s, section, small, span, strong, sub, sup, table, tbody, td, tfoot, th, thead, time, tr, tt, u, ul, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+  }
+  body, html {
+    height: 100%;
+    overflow: visible;
+  }
+  body {
+    font-size: .26rem;
+    color: #333;
+    background: #ededed;
+    font-family: "Microsoft YaHei",Arial;
+    -webkit-tap-highlight-color: rgba(255,255,255,0);
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-text-size-adjust: none;
+    -webkit-tap-highlight-color: transparent;
+  }
+  html * {
+    box-sizing: border-box;
+  }
+  body, html {
+    width: 100%;
+    height: 100%;
+  }
+  #app-pinner-box {
+    width: 100%;
+    position: fixed;
+    z-index: 88;
+    -webkit-transform: translateY(-80px);
+    transform: translateY(-80px);
+    -webkit-transition: all .2s ease-out;
+    transition: all .2s ease-out;
+    left: 0;
+  }
+  .app-pinner {
+    text-align: center;
+    width: 100%;
+    background: #fff;
+    left: 0;
+    bottom: 0;
+    z-index: 888;
+    box-sizing: border-box;
+    padding: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 1px 1px rgba(0,0,0,.1);
+  }
+  .app-pinner .app-icon {
+    float: left;
+    overflow: hidden;
+  }
+  .app-pinner img {
+    width: 42px;
+    display: inline-block;
+    float: left;
+    margin-left: 4px;
+    margin-right: 6px;
+  }
+  .app-pinner .app-icon>div {
+    float: left;
+    text-align: left;
+  }
+  .app-pinner .app-icon>div b {
+    font-size: 14px;
+    margin: 2px 0;
+    color: #000;
+    display: block;
+  }
+  .app-pinner .app-icon>div span {
+    font-size: 12px;
+    color: #999;
+    margin-top: -2px;
+    display: block;
+    width: 2.9rem;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+  .app-pinner .download-btn {
+    float: right;
+    margin: 6px 0 auto;
+    font-size: 14px;
+    padding: 0 10px;
+    line-height: 2;
+    color: #fff;
+    background: #f05b48;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    text-decoration: none;
+  }
+  .wrap {
+    width: 100%;
+    height: 100%;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    position: relative;
+  }
+  .page-top {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+  }
+  .page-top .bg {
+    position: fixed;
+    width: 100%;
+    height: 46%;
+    z-index: -1;
+    background: url(https://m.mobike.com/app/images/image_6.10f2dd7.jpg) center center no-repeat;
+    background-size: cover;
+    top: 0;
+    left: 0;
+  }
+  .page-top .banner, .page-top .content {
+    position: relative;
+    z-index: 1;
+  }
+  .page-top .banner {
+    width: 100%;
+    position: relative;
+    height: 46%;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-box-align: center;
+  }
+  .page-top .banner .logo {
+    display: block;
+    width: 18.75%;
+    height: auto;
+    margin-top: 9%;
+    margin-bottom: 4%;
+  }
+  .page-top .banner .slogan-text {
+    display: block;
+    width: 56.2%;
+    height: auto;
+  }
+  .page-top .banner .banner-btn {
+    display: block;
+    background: rgba(240,91,72,.95);
+    width: 2.912rem;
+    font-weight: 400;
+    border-radius: 999px;
+    line-height: 2.6;
+    font-size: .22rem;
+    color: #fff;
+    margin-top: 9%;
+  }
+  .page-top .content {
+    -webkit-box-orient: vertical;
+    -webkit-box-align: center;
+    background: #fff;
+    padding: .78rem .468rem;
+    font-size: 10px;
+    height: 54%;
+  }
+  .invitation {
+    margin-bottom: .68rem;
+  }
+  .invitation {
+    display: none;
+  }
+  .invitation p {
+    font-size: .28rem;
+    color: #333;
+    font-weight: 600;
+  }
+  .invitation b {
+    font-size: .36rem;
+    color: #f05b48;
+    margin-top: .156rem;
+    display: block;
+    font-weight: 600;
+  }
+  .page-top-text {
+    font-weight: 600;
+  }
+  .page-top .content>p {
+    width: 88%;
+    font-size: .32rem;
+    color: #333;
+    margin-bottom: 1.3rem;
+    text-align: justify;
+    text-justify: inter-ideograph;
+  }
+  .page-top .content ul {
+    color: #727272;
+  }
+  .page-top .content li {
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAIAAABLbSncAAAAGXRFW…RRZDkGNFG4HFBiORaJDcshRi1HE0W2fDmyKEICIgcXBQIAVKuSgT5L6k4AAAAASUVORK5CYII=) no-repeat left 7px;
+    background-size: 4px;
+    padding-left: 4px;
+    margin: 1em 0 0;
+  }
+  .page-top .content li b {
+    color: #f05b48;
+    margin: 0 .13rem;
+    font-weight: 600;
+    float: left;
+    font-size: .24rem;
+  }
+  .page-top .content li span {
+    overflow: hidden;
+    display: block;
+    font-size: .24rem;
+  }
+  .wx-download-subtitle {
+    color: #a2a2a2;
+    font-size: .9rem;
+    margin: 2.5rem 0 0;
+    display: none;
+  }
+  .scroll-tips {
+    position: absolute;
+    display: block;
+    bottom: 0;
+    height: 40px;
+    width: 22px;
+    left: 50%;
+    margin-left: -11px;
+    z-index: 2;
+  }
+  .scroll-tips span {
+    background: url(https://m.mobike.com/app/images/icon_3.355377b.png) no-repeat;
+    background-size: 100%;
+    -webkit-animation: tips_ani 1s ease-out infinite;
+    -webkit-transition: background-position 1s;
+    transition: background-position 1s;
+    height: 100%;
+    width: 100%;
+    display: block;
+  }
+  .page {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    background: #fff;
+  }
+  .page .banner img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+  .page .content {
+    width: 100%;
+    height: 160px;
+    display: -webkit-box;
+    -webkit-box-align: center;
+    -webkit-box-pack: center;
+  }
+  .page .content img {
+    display: block;
+    width: 65.6%;
+    height: auto;
+  }
+  .page .content img {
+    display: block;
+    width: 65.6%;
+    height: auto;
+  }
+  .foot .content {
+    height: 34%;
+  }
+  .foot .content {
+    width: 100%;
+    height: auto;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-box-align: center;
+  }
+  .foot .content .slogan_2 {
+    display: block;
+    width: 62.5%;
+    height: auto;
+    margin-top: 11%;
+  }
+  .foot .content .foot_logo2 {
+    display: block;
+    width: 46.8%;
+    height: auto;
+  }
+  .foot {
+    width: 100%;
+    height: 100%;
+    background: #f05b48;
+  }
+
+  </style>
+</head>
+<body>
+<div id="app-pinner-box">
+  <div class="app-pinner">
+    <div class="app-icon">
+      <img src="https://m.mobike.com/app/images/mobike.4c06c1f.png" alt="摩拜单车">
+      <div>
+        <b zh="摩拜单车" en="Mobike" data-lang-flag="lang0">摩拜单车</b>
+        <span zh="全球首款无桩共享单车" en="Unlock your world" data-lang-flag="lang1">全球首款无桩共享单车</span>
+      </div>
+    </div>
+    <a class="download-btn" track="download-pinner-btn-download" href="http://a.app.qq.com/o/simple.jsp?pkgname=com.mobike.mobikeapp">
+      <span zh="立即下载" en="Download" data-lang-flag="lang2">立即下载</span>
+    </a>
+  </div>
+</div>
+<div class="wrap">
+  <header class="page-top">
+    <div class="bg"></div>
+    <div class="banner">
+      <img src="https://m.mobike.com/app/images/logo_1.79df85d.png" class="logo">
+      <img src="https://m.mobike.com/app/images/slogan_1.206b8d3.png" class="slogan-text">
+       <a style="display:block" id="download-top-link" href="http://a.app.qq.com/o/simple.jsp?pkgname=com.mobike.mobikeapp">
+         <button class="banner-btn" track="download-top-btn">立即下载</button>
+       </a>
+     </div>
+     <div class="content">
+       <div class="invitation">
+         <p>注册时输入邀请码，双方增加信用分<br>您获得的邀请码为：</p>
+         <b id="invitation-code" data-key="invitationCode"></b>
+       </div>
+       <p class="page-top-text">打车太贵？走路太远？地铁太挤？来用摩拜单车吧。</p>
+       <div>
+         <ul>
+           <li>
+             <b>智能</b>
+             <span>手机上完成租车、用车、结费。实时查看周围可骑单车位置</span>
+           </li>
+           <li>
+             <b>方便</b>
+             <span>无需固定还车点，停放在任意路边公共停车区域内即可</span>
+           </li>
+           <li>
+             <b>便宜</b>
+             <span>运动版1元／30分钟；轻骑版0.5元／30分钟</span>
+           </li>
+         </ul>
+       </div>
+       <span class="wx-download-subtitle">您也可以在微信中搜索“摩拜单车”，进入摩拜单车小程序。</span>
+     </div>
+     <aside class="scroll-tips">
+       <span></span>
+     </aside>
+   </header>
+   <section class="page page2">
+			<div class="banner">
+        <img src="https://m.mobike.com/app/images/image_04.c7c7a67.jpg">
+      </div>
+			<div class="content" style="background:#17b7cc">
+        <img src="https://m.mobike.com/app/images/text_03.d9d592c.png">
+      </div>
+		</section>
+		<section class="page page3">
+			<div class="banner">
+        <img src="https://m.mobike.com/app/images/image_2.2aca157.jpg">
+      </div>
+			<div class="content" style="background:#ed5a72">
+        <img src="https://m.mobike.com/app/images/text_09.fedadd3.png">
+      </div>
+		</section>
+		<section class="page page4">
+			<div class="banner">
+        <img src="https://m.mobike.com/app/images/image_3.38b18b7.jpg">
+      </div>
+			<div class="content" style="background:#4cc387">
+        <img src="https://m.mobike.com/app/images/text_12.04f9448.png">
+      </div>
+		</section>
+		<section class="page page5">
+			<div class="banner">
+        <img src="https://m.mobike.com/app/images/image_4.b1335e4.jpg">
+      </div>
+			<div class="content" style="background:#3accc0">
+        <img src="https://m.mobike.com/app/images/text_14.4af5d9a.png">
+      </div>
+		</section>
+		<section class="page page2">
+			<div class="banner">
+        <img src="https://m.mobike.com/app/images/image_1.ec85a84.jpg">
+      </div>
+			<div class="content" style="background:#ffba61">
+        <img src="https://m.mobike.com/app/images/text_19.7a9fea3.png">
+      </div>
+		</section>
+		<footer class="page foot">
+			<div class="banner">
+        <img src="https://m.mobike.com/app/images/image_05.17762b2.jpg">
+      </div>
+			<div class="content">
+				<img src="https://m.mobike.com/app/images/text_25.7cebfd4.png" class="slogan_2">
+				<img src="https://m.mobike.com/app/images/logo_2.24f9eb9.png" class="foot_logo2">
+			</div>
+		</footer>
+  </div>
+</body>
+</html>
