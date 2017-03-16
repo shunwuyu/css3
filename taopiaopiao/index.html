@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <style>
+  *, :after, :before {
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+  }
+  * {
+    font-family: Arial,Hiragino Sans GB,Microsoft YaHei,WenQuanYi Micro Hei,sans-serif!important;
+  }
+  a {
+    color: #0af;
+    text-decoration: none;
+  }
+
+  body {
+    margin: 0;
+    font-family: 'Helvetica Neue',Helvetica,Arial,'Hiragino Sans GB','Microsoft Yahei',STXihei,SimHei,'WenQuanYi Micro Hei','Droid Sans',sans-serif;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  a {
+    color: #108ee9;
+    text-decoration: none;
+  }
+  a {
+    color: #0af;
+    text-decoration: none;
+  }
+  body, button, input, select, textarea {
+    font-size: 16px;
+    line-height: 1.5;
+    color: #333;
+    font-family: Helvetica Neue,Helvetica,STHeiTi,sans-serif;
+  }
+  blockquote, body, dd, div, dl, dt, fieldset, form, h1, h2, h3, h4, h5, h6, input, legend, li, ol, p, td, textarea, th, ul {
+    margin: 0;
+    padding: 0;
+  }
+  .dy-list .dy-list-item, .dy-list[dy-flat~=flat] .dy-list-item {
+    padding: 1.5625vw 5vw;
+    padding: .3125rem 1rem;
+    padding: 1.5625vmin 5vmin;
+    min-height: 10vw;
+    min-height: 2rem;
+    min-height: 10vmin;
+    font-size: 1rem;
+    border-top-width: .0625rem;
+    border-right-width: .0625rem;
+    border-bottom-width: .0625rem;
+    border-left-width: .0625rem;
+    border-style: solid;
+    border-color: #d7d7d7;
+    border-left-width: 0;
+    border-right-width: 0;
+    background-color: #fff;
+    color: #000;
+    vertical-align: middle;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: -.3125vw;
+    margin-top: -.0625rem;
+    margin-top: -.3vmin;
+    text-align: left;
+    overflow: inherit;
+    display: -webkit-box;
+    display: -webkit-flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+  }
+  .dy-list .dy-list-item {
+    border: none;
+    background: -webkit-gradient(linear,left top,left bottom,from(#fff),color-stop(.5,#fff),color-stop(.5,transparent)) top left no-repeat,-webkit-gradient(linear,left top,left bottom,from(#fff),to(#fff)) bottom left no-repeat,-webkit-gradient(linear,left top,left bottom,from(#e5e5e5),color-stop(.5,#e5e5e5),color-stop(.5,transparent)) top left no-repeat,-webkit-gradient(linear,left top,left bottom,from(#e5e5e5),to(#e5e5e5)) bottom left no-repeat,#fff;
+    background: -webkit-linear-gradient(90deg,#fff,#fff) top left no-repeat,-webkit-linear-gradient(270deg,#fff,#fff) bottom left no-repeat,-webkit-linear-gradient(90deg,#e5e5e5,#e5e5e5,hsla(0,0%,90%,0)) top left no-repeat,-webkit-linear-gradient(270deg,#e5e5e5,#e5e5e5,hsla(0,0%,90%,0)) bottom left no-repeat,#fff;
+    background: -webkit-linear-gradient(90deg,#fff,#fff) top left no-repeat,linear-gradient(180deg,#fff,#fff) bottom left no-repeat,linear-gradient(0deg,#e5e5e5,#e5e5e5,hsla(0,0%,90%,0)) top left no-repeat,linear-gradient(180deg,#e5e5e5,#e5e5e5,hsla(0,0%,90%,0)) bottom left no-repeat,#fff;
+    background: linear-gradient(0deg,#fff,#fff) top left no-repeat,linear-gradient(180deg,#fff,#fff) bottom left no-repeat,linear-gradient(0deg,#e5e5e5,#e5e5e5,hsla(0,0%,90%,0)) top left no-repeat,linear-gradient(180deg,#e5e5e5,#e5e5e5,hsla(0,0%,90%,0)) bottom left no-repeat,#fff;
+    -webkit-background-size: 100% 1px,.75rem 1px,100% 1px,100% 1px;
+    -webkit-background-size: 100% 1px,3.75vmin 1px,100% 1px,100% 1px;
+    margin-top: 0;
+    padding: 15px;
+  }
+  .dy-list .up-line-long {
+    position: relative;
+  }
+  .dy-list .up-line-long, .dy-list .up-line-long:last-child {
+    -webkit-background-size: 15px 1px,100% 1px,100% 1px,100% 1px;
+  }
+  .dy-list .up-line-long:first-child {
+    -webkit-background-size: 100% 1px,100% 1px,100% 1px,100% 1px;
+  }
+  .dy-list .up-line-long .fantastic {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 78px;
+    text-align: center;
+  }
+  .dy-list .up-line-long .fantastic .type0, .dy-list .up-line-long .fantastic .type1, .dy-list .up-line-long .fantastic .type2, .dy-list .up-line-long .fantastic .type3 {
+    width: 23.5px;
+    height: 31px;
+    display: inline-block;
+    margin: 0 1px;
+  }
+  .dy-list .up-line-long .fantastic .type0 {
+    background-image: url(http://gw.alicdn.com/tps/TB1AGuHLXXXXXXMXpXXXXXXXXXX-94-122.png);
+    background-position: center center;
+    background-size: cover;
+  }
+  .dy-list .up-line-long .fantastic .type3 {
+    background-image: url(http://gw.alicdn.com/tps/TB1ej9oLXXXXXaKaXXXXXXXXXXX-94-124.png);
+    background-position: center center;
+    background-size: cover;
+  }
+  .dy-list .up-line-long .fantastic .type1 {
+    background-image: url(http://gw.alicdn.com/tps/TB1Cg5BLXXXXXXhXFXXXXXXXXXX-94-122.png);
+    background-position: center center;
+    background-size: cover;
+  }
+  .dy-list .dy-list-item .dy-list-thumb {
+    margin-right: 10px;
+    display: block;
+  }
+  .dy-list .dy-list-item .dy-list-thumb .show-pic {
+    width: 65px;
+    height: 90px;
+    background-position: center center;
+    background-size: cover;
+    position: relative;
+  }
+  .dy-list .dy-list-item .dy-list-content {
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    min-width: 18.75vw;
+    min-width: 3.75rem;
+    min-width: 18.8vmin;
+    width: auto;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .dy-list .dy-list-item .dy-list-content {
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    display: block;
+  }
+  .dy-list .dy-list-item .dy-list-title {
+    color: #000;
+    font-size: 1rem;
+    width: auto;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .dy-list .dy-list-item .dy-list-title {
+    font-weight: 500;
+  }
+  .dy-list .dy-list-item .dy-list-title .show-name {
+    vertical-align: middle;
+  }
+  .dy-list .dy-list-item .dy-list-brief {
+    color: #666;
+    font-size: .75rem;
+    margin-top: .625vw;
+    margin-top: .125rem;
+    margin-top: .6vmin;
+    width: auto;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .dy-list .dy-list-item .dy-list-brief {
+    color: #8a869e;
+    font-size: .8125rem;
+  }
+  .film-star {
+    margin-bottom: 4px;
+  }
+  .film-star .show-star-mod {
+    overflow: hidden;
+  }
+  .film-star .show-star-mod .show-star-ranking {
+    float: left;
+    margin-top: 2px;
+    width: 50px;
+    height: 10px;
+    background-size: auto 100%;
+    background-image:url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='5000' height='1000' viewBox='0 0 5000 1000'%3E%3Cpath fill='%23FEA54C' d='M2191.983 977.642l59.017-344.9-250-244.262 345.49-50.32L2501 24.358l154.51 313.802L3001 388.48l-250 244.26 59.017 344.903L2501 814.803l-309.017 162.84zm261.148-253.68l47.87-25.225 47.87 25.225 239.32 126.113 13.286 77.654-36.258 26.305-69.697-36.728-45.73-267.248-9.086-53.11 38.538-37.653 193.892-189.44 77.625 11.305 13.926 42.8-56.11 54.82-267.866-39.014-53.457-7.786-23.863-48.465-119.616-242.935 34.893-70.867h44.666l34.893 70.867-119.615 242.935-23.862 48.465-53.457 7.786-267.866 39.014-56.11-54.82 13.927-42.8 77.626-11.306 193.89 189.44 38.54 37.655-9.087 53.11-45.73 267.247-69.697 36.728-36.26-26.306 13.288-77.655 239.32-126.112zM3191.983 977.642l59.017-344.9-250-244.262 345.49-50.32L3501 24.358l154.51 313.802L4001 388.48l-250 244.26 59.017 344.903L3501 814.803l-309.017 162.84zm261.148-253.68l47.87-25.225 47.87 25.225 239.32 126.113 13.286 77.654-36.258 26.305-69.697-36.728-45.73-267.248-9.086-53.11 38.538-37.653 193.892-189.44 77.625 11.305 13.926 42.8-56.11 54.82-267.866-39.014-53.457-7.786-23.863-48.465-119.616-242.935 34.893-70.867h44.666l34.893 70.867-119.615 242.935-23.862 48.465-53.457 7.786-267.866 39.014-56.11-54.82 13.927-42.8 77.626-11.306 193.89 189.44 38.54 37.655-9.087 53.11-45.73 267.247-69.697 36.728-36.26-26.306 13.288-77.655 239.32-126.112zM4191.983 977.642l59.017-344.9-250-244.262 345.49-50.32L4501 24.358l154.51 313.802L5001 388.48l-250 244.26 59.017 344.903L4501 814.803l-309.017 162.84zm261.148-253.68l47.87-25.225 47.87 25.225 239.32 126.113 13.286 77.654-36.258 26.305-69.697-36.728-45.73-267.248-9.086-53.11 38.538-37.653 193.892-189.44 77.625 11.305 13.926 42.8-56.11 54.82-267.866-39.014-53.457-7.786-23.863-48.465-119.616-242.935 34.893-70.867h44.666l34.893 70.867-119.615 242.935-23.862 48.465-53.457 7.786-267.866 39.014-56.11-54.82 13.927-42.8 77.626-11.306 193.89 189.44 38.54 37.655-9.087 53.11-45.73 267.247-69.697 36.728-36.26-26.306 13.288-77.655 239.32-126.112zM1191.983 977.642l59.017-344.9-250-244.262 345.49-50.32L1501 24.358l154.51 313.802L2001 388.48l-250 244.26 59.017 344.903L1501 814.803l-309.017 162.84zm261.148-253.68l47.87-25.225 47.87 25.225 239.32 126.113 13.286 77.654-36.258 26.305-69.697-36.728-45.73-267.248-9.086-53.11 38.538-37.653 193.892-189.44 77.625 11.305 13.926 42.8-56.11 54.82-267.866-39.014-53.457-7.786-23.863-48.465-119.616-242.935 34.893-70.867h44.666l34.893 70.867-119.615 242.935-23.862 48.465-53.457 7.786-267.866 39.014-56.11-54.82 13.927-42.8 77.626-11.306 193.89 189.44 38.54 37.655-9.087 53.11-45.73 267.247-69.697 36.728-36.26-26.306 13.288-77.655 239.32-126.112zM190.983 977.642L250 632.742 0 388.48l345.49-50.32L500 24.358 654.51 338.16 1000 388.48 750 632.74l59.017 344.903L500 814.803l-309.017 162.84zm261.148-253.68L500 698.738l47.87 25.225 239.32 126.113 13.286 77.654-36.258 26.305-69.697-36.728-45.73-267.248-9.086-53.11 38.538-37.653 193.892-189.44 77.625 11.305 13.926 42.8-56.11 54.82-267.866-39.014-53.457-7.786-23.863-48.465-119.616-242.935 34.893-70.867h44.666l34.893 70.867L437.61 383.517l-23.862 48.465-53.457 7.786-267.866 39.014-56.11-54.82 13.927-42.8 77.626-11.306 193.89 189.44 38.54 37.655-9.087 53.11-45.73 267.247-69.697 36.728-36.26-26.306 13.288-77.655 239.32-126.112z'/%3E%3C/svg%3E")
+ }
+.film-star .show-star-mod .show-star-ranking-light {
+    width: 100%;
+    height: 100%;
+    background-size: auto 100%;
+    background-image:url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='5000' height='1000' viewBox='0 0 5000 1000'%3E%3Cpath fill='%23FEA54C' d='M2501 814.802l-309.017 162.84 59.017-344.9-250-244.262 345.49-50.32L2501 24.357l154.51 313.8L3001 388.48l-250 244.26 59.017 344.902zM3501 814.802l-309.017 162.84 59.017-344.9-250-244.262 345.49-50.32L3501 24.357l154.51 313.8L4001 388.48l-250 244.26 59.017 344.902zM4501 814.802l-309.017 162.84 59.017-344.9-250-244.262 345.49-50.32L4501 24.357l154.51 313.8L5001 388.48l-250 244.26 59.017 344.902zM1501 814.802l-309.017 162.84 59.017-344.9-250-244.262 345.49-50.32L1501 24.357l154.51 313.8L2001 388.48l-250 244.26 59.017 344.902zM500 814.802l-309.017 162.84L250 632.742 0 388.48l345.49-50.32L500 24.357l154.51 313.8L1000 388.48 750 632.74l59.017 344.902z'/%3E%3C/svg%3E")
+}
+.film-star .show-star-mod .show-star-remark {
+    float: left;
+    margin-left: 3px;
+    font-size: 12px;
+    line-height: 16px;
+}
+.right-btn-red {
+    border: 1px solid #ff4d64;
+    color: #ff4d64!important;
+}
+.dy-list .fantastic-type .right-btn-blue, .dy-list .fantastic-type .right-btn-gray, .dy-list .fantastic-type .right-btn-red {
+    margin-top: 1rem;
+    margin-top: 5vmin;
+}
+.right-btn-blue, .right-btn-gray, .right-btn-red {
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    border-radius: 4px;
+    text-align: center;
+    white-space: nowrap;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-sizing: border-box;
+    padding-left: .625rem;
+    padding-left: 2.7vmin;
+    padding-right: .625rem;
+    padding-right: 2.7vmin;
+    margin-left: .75rem;
+    margin-left: 3.2vmin;
+    margin-right: .0625rem;
+    margin-right: .3vmin;
+    font-size: .8125rem;
+    height: 1.75rem;
+    height: 7.5vmin;
+}
+.dy-list .dy-list-item img {
+    vertical-align: middle;
+}
+.dy-list .dy-list-item .dy-list-thumb .show-pic .play-icon {
+    width: 1.25rem;
+    width: 5.3vmin;
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    margin-left: -.625rem;
+    margin-left: -2.7vmin;
+    margin-top: -.625rem;
+    margin-top: -2.7vmin;
+}
+
+.flex-slider-container {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-flex: 0;
+    -webkit-box-orient: vertical;
+    -webkitbox-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    -mos-justify-content: center;
+    justify-content: center;
+}
+.slide {
+    margin: 0 auto;
+    position: relative;
+    width: 100%;
+    height: 9.375rem;
+    height: 40vmin;
+}
+.flex-slider {
+    position: relative;
+    overflow: hidden;
+}
+.flex-slider, .flex-slider ul {
+    transition:transform .5s;
+    width: 100%;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    box-sizing: border-box;
+}
+.slide .flex-slider, .slide .flex-slider>ul {
+    height: 100%;
+    min-height: 9.375rem;
+    min-height: 40vmin;
+}
+.flex-slider ul {
+    margin: 0;
+    padding: 0;
+    height: 6.25rem;
+    height: 31.25vw;
+    will-change: transform;
+    -webkit-flex-grow: 1;
+    -webkit-box-flex: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    -webkit-transform: translateZ(0) scaleX(1);
+}
+.flex-slider ul, .flex-slider ul li {
+    -webkit-box-flex: 0;
+    -webkit-flex-shrink: 0;
+    -ms-flex-negative: 0;
+    flex-shrink: 0;
+    -webkit-flex-basis: 100%;
+    -ms-flex-preferred-size: 100%;
+    flex-basis: 100%;
+}
+.flex-slider ul li {
+    list-style: none;
+    background-color: #ededed;
+    width: 100%;
+    height: 100%;
+    min-height: 6.25rem;
+    min-height: 31.25vw;
+    -webkit-flex-grow: 0;
+    -ms-flex-positive: 0;
+    flex-grow: 0;
+    position: relative;
+    display: block;
+}
+.slide .flex-slider>ul>li {
+    min-height: 9.375rem;
+    min-height: 40vmin;
+}
+.flex-slider ul li a {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: -webkit-box;
+    -webkit-box-orient: horizontal;
+    -webkit-box-pack: center;
+    -webkit-box-align: center;
+    display: block;
+    background: url(http://g.alicdn.com/ju/utility/indicator/loading-movie.svg?t=20140709);
+    background-size: contain;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+.flex-slider ul li .loaded {
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+.slide .flex-slider>ul>li>a {
+    background-size: 32px 32px;
+}
+.slide .flex-slider>ul>li .loaded {
+    background-size: cover;
+}
+.flex-slider .flex-slider--pagination {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    right: 0;
+    bottom: .3125rem;
+    bottom: 1.5625vw;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    height: .4375rem;
+    height: 2.1875vw;
+    -webkit-box-flex: 0;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    -mos-justify-content: center;
+    justify-content: center;
+    -webkit-transform: translateZ(0);
+}
+.flex-slider .flex-slider--pagination>span {
+    -webkit-flex-shrink: 0;
+    -ms-flex-negative: 0;
+    flex-shrink: 0;
+    -webkit-flex-grow: 0;
+    -ms-flex-positive: 0;
+    flex-grow: 0;
+    -webkit-flex-basis: auto;
+    -ms-flex-preferred-size: auto;
+    flex-basis: auto;
+    -webkit-box-flex: 0;
+    position: relative;
+    height: .4375rem;
+    height: 2.1875vw;
+    width: .4375rem;
+    width: 2.1875vw;
+    display: block;
+    border-radius: 50%;
+    margin: 0 3px;
+    background: #e5e8e8;
+}
+.flex-slider .flex-slider--pagination .hot{
+  background:#ff5733;
+}
+  </style>
+</head>
+<body>
+<div id="J_sliderBanner">
+  <div class="slide J_slide flex-slider-container">
+    <div class="flex-slider" data-drag="1" data-swipe="1">
+      <ul style="transform: translate3d(0px, 0px, 0px);">
+        <li class="">
+          <a class="loaded" href="https://market.m.taobao.com/markets/TaoBaoMovie/tpplmk?s=tb&amp;spm=dianying.tb.1.1&amp;cityCode=310100" data-src="//gw.alicdn.com/tps/TB14AcIPFXXXXbmXpXXXXXXXXXX-1280-520.jpg_720x720Q30.jpg" style="background-image: url(http://gw.alicdn.com/tps/TB14AcIPFXXXXbmXpXXXXXXXXXX-1280-520.jpg_720x720Q30.jpg);">
+          </a>
+        </li>
+        <li class="">
+          <a class="loaded" href="https://market.m.taobao.com/markets/TaoBaoMovie/tpplmk?s=tb&amp;spm=dianying.tb.1.1&amp;cityCode=310100" data-src="//gw.alicdn.com/tps/TB14AcIPFXXXXbmXpXXXXXXXXXX-1280-520.jpg_720x720Q30.jpg" style="background-image: url(http://gw.alicdn.com/tfs/TB1IE.cPVXXXXcTXFXXXXXXXXXX-1280-520.jpg_720x720Q30.jpg);">
+          </a>
+        </li>
+        <li class="">
+          <a class="loaded" href="https://market.m.taobao.com/markets/TaoBaoMovie/tpplmk?s=tb&amp;spm=dianying.tb.1.1&amp;cityCode=310100" data-src="//gw.alicdn.com/tps/TB14AcIPFXXXXbmXpXXXXXXXXXX-1280-520.jpg_720x720Q30.jpg" style="background-image: url(http://gw.alicdn.com/tfs/TB1CMhdQXXXXXXCaXXXXXXXXXXX-1280-520.jpg_720x720Q30.jpg);">
+          </a>
+        </li>
+      </ul>
+      <div class="flex-slider--pagination" style="transform: translateZ(0px); position: absolute;">
+        <span class="point hot"></span>
+        <span class="point"></span>
+        <span class="point"></span>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="dy-list" dy-mode="flat" data-dt>
+  <div class="dy-list-body">
+    <div data-url="https://h5.m.taobao.com/app/movie/pages/index/show-detail.html?from=def&amp;showid=212274&amp;showname=%E4%B8%80%E6%9D%A1%E7%8B%97%E7%9A%84%E4%BD%BF%E5%91%BD&amp;env=m&amp;bottomtab=hide" class="dy-list-item up-line-long fantastic-type">
+    <div class="fantastic">
+      <div class="type0"></div><div class="type3"></div><div class="type1"></div>
+    </div>
+    <div class="dy-list-thumb">
+      <div class="show-pic" data-video="http://cloud.video.taobao.com/play/u/1745440806/p/1/e/6/t/1/d/hd/51240112.mp4" data-cover="//gw.alicdn.com/i1/TB1ko45PFXXXXc6apXXXXXXXXXX_.jpg_160x160Q75.jpg" style="opacity: 1; transition: opacity 0.5s ease-in; background-image: url(&quot;https://gw.alicdn.com/i1/TB1ko45PFXXXXc6apXXXXXXXXXX_.jpg_160x160Q75.jpg&quot;), url(&quot;//gw.alicdn.com/tps/i1/TB147JCLFXXXXc1XVXXxGsw1VXX-112-168.png&quot;);">
+        <img class="play-icon" src="http://gw.alicdn.com/tps/TB1PH2uLXXXXXaLaXXXXXXXXXXX-60-60.png">
+      </div>
+    </div>
+    <a class="dy-list-content" href="https://h5.m.taobao.com/app/movie/pages/index/show-detail.html?from=def&amp;showid=212274&amp;showname=%E4%B8%80%E6%9D%A1%E7%8B%97%E7%9A%84%E4%BD%BF%E5%91%BD&amp;env=m&amp;bottomtab=hide" target="_blank" data-role="show-info" data-tap="1">
+      <div class="dy-list-title">
+        <span class="show-name">一条狗的使命</span>
+      </div>
+      <div class="dy-list-brief">
+        <div class="film-star">
+          <div class="show-star-mod">
+            <div class="show-star-ranking">
+              <div class="show-star-ranking-light" style="width:100%;"></div>
+            </div>
+            <div class="show-star-remark">9.2</div>
+          </div>
+        </div>
+      </div>
+      <div class="dy-list-brief">导演：拉斯•霍尔斯道姆</div>
+      <div class="dy-list-brief">主演：布丽特·罗伯森</div>
+    </a>
+    <a href="https://h5.m.taobao.com/app/movie/pages/index/cinema-list.html?from=def&amp;showid=212274&amp;showname=%E4%B8%80%E6%9D%A1%E7%8B%97%E7%9A%84%E4%BD%BF%E5%91%BD&amp;env=m&amp;bottomtab=hide" target="_blank" class="right-btn-red" data-tap="1">购票</a>
+  </div>
+  </div>
+</div>
+<script>
+const oUL = document.querySelector('.flex-slider ul');
+const winWidth = window.innerWidth;
+// alert(winWidth);
+const lis = oUL.querySelectorAll('li');
+const dots = document.querySelectorAll('.point');
+const numLi = lis.length;
+let cur = 0;
+window.onload = function() {
+  setInterval(() => {
+    document.querySelector('.hot').classList.remove('hot');
+    cur++;
+    dots[cur].classList.add('hot');
+    oUL.style.transform = 'translate3d(-' + winWidth*cur + 'px,0,0)';
+    if(cur == numLi - 1) {
+      cur = -1;
+    }
+  },3000);
+}
+</script>
+</body>
+</html>

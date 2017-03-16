@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <style>
+  *, :after, :before {
+      -webkit-tap-highlight-color: rgba(0,0,0,0);
+  }
+  li {
+    list-style: none;
+  }
+  body {
+    margin: 0;
+    font-family: 'Helvetica Neue',Helvetica,Arial,'Hiragino Sans GB','Microsoft Yahei',STXihei,SimHei,'WenQuanYi Micro Hei','Droid Sans',sans-serif;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  body, button, input, select, textarea {
+    font-size: 16px;
+    line-height: 1.5;
+    color: #333;
+    font-family: Helvetica Neue,Helvetica,STHeiTi,sans-serif;
+  }
+  blockquote, body, dd, div, dl, dt, fieldset, form, h1, h2, h3, h4, h5, h6, input, legend, li, ol, p, td, textarea, th, ul {
+      margin: 0;
+      padding: 0;
+  }
+  .city-index, .city-wrap {
+      -webkit-transition: all .2s ease-out;
+      transition: all .2s ease-out;
+  }
+  .city-wrap {
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    opacity: 0;
+    -webkit-transform: translateY(-50px);
+    transform: translateY(-50px);
+  }
+  .city-wrap.top-in {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+  .city-wrap .city-title {
+    z-index: 1002;
+    position: absolute;
+    top: 0;
+    border-bottom: 1px solid #e9e9e9;
+    width: 100%;
+    height: 45px;
+    background: #fff;
+    color: #000;
+    font-size: 16px;
+    line-height: 45px;
+    text-align: center;
+  }
+  .city-wrap .city-title .close {
+    position: absolute;
+    display: block;
+    top: 0;
+    right: 0;
+    width: 40px;
+    height: 40px;
+    color: #777;
+    text-align: center;
+    font-size: 29px;
+  }
+  .city-wrap .city-list {
+    box-sizing: border-box;
+    padding: 46px 0 0;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+    background: #fff;
+    color: #777;
+    font-size: 12px;
+  }
+  .city-wrap .city-list h3 {
+    margin: 0;
+    padding: 9px 12px;
+    background: #eee;
+    color: #777;
+    font-size: 12px;
+  }
+  .city-wrap .city-list ul {
+    margin: 0;
+    padding: 0;
+  }
+  a {
+    color: #0af;
+    text-decoration: none;
+  }
+  .city-wrap .city-list li a {
+    display: block;
+    border-bottom: 1px solid #e5e7e7;
+    padding: 12px;
+    overflow: hidden;
+    background: #fcfcfc;
+    color: #777;
+    font-size: 15px;
+    text-decoration: none;
+  }
+  .city-wrap .city-index {
+    z-index: 1001;
+    position: absolute;
+    right: 0;
+    top: 60px;
+    border: 1px solid #ccc;
+    padding: 3px 0;
+    width: 40px;
+    background: hsla(0,0%,100%,.5);
+    -webkit-transform: translate(100%,50px);
+    transform: translate(100%,50px);
+  }
+  .city-wrap .city-index.left-in {
+    opacity: 1;
+    -webkit-transform: translate(0);
+    transform: translate(0);
+  }
+  .city-wrap .city-index ul {
+    margin: 0;
+    padding: 0;
+  }
+  .city-wrap .city-index li {
+    list-style: none;
+    float: left;
+  }
+  .city-wrap .city-index a {
+    display: block;
+    width: 40px;
+    height: 22px;
+    text-align: center;
+    font-size: 12px;
+    line-height: 22px;
+    color: #a9a9a9;
+    text-decoration: none;
+  }
+
+  </style>
+</head>
+<body>
+  <div class="city-wrap top-in" data-tap="1">
+    <div class="city-title">选择城市
+      <span class="close" data-tap="1">×</span>
+    </div>
+    <div class="city-list">
+      <div class="city-category" id="当前">
+        <h3>当前</h3>
+        <ul>
+          <li data-citycode="310100" data-cityname="上海">
+            <a href="javascript:;">上海</a>
+          </li>
+        </ul>
+      </div>
+      <div class="city-category" id="热门">
+        <h3>热门</h3>
+        <ul>
+          <li data-citycode="110100" data-cityname="北京">
+            <a href="javascript:;">北京</a>
+          </li>
+          <li data-citycode="310100" data-cityname="上海">
+            <a href="javascript:;">上海</a>
+          </li>
+          <li data-citycode="440300" data-cityname="深圳">
+            <a href="javascript:;">深圳</a>
+          </li>
+          <li data-citycode="440100" data-cityname="广州">
+            <a href="javascript:;">广州</a>
+          </li>
+          <li data-citycode="510100" data-cityname="成都">
+            <a href="javascript:;">成都</a>
+          </li>
+          <li data-citycode="420100" data-cityname="武汉">
+            <a href="javascript:;">武汉</a>
+          </li>
+          <li data-citycode="330100" data-cityname="杭州">
+            <a href="javascript:;">杭州</a>
+          </li>
+          <li data-citycode="500100" data-cityname="重庆">
+            <a href="javascript:;">重庆</a>
+          </li>
+        </ul>
+      </div>
+      <div class="city-category" id="A">
+        <h3>A</h3>
+        <ul>
+          <li data-citycode="610900" data-cityname="安康">
+            <a href="javascript:;">安康</a>
+          </li>
+          <li data-citycode="340800" data-cityname="安庆">
+            <a href="javascript:;">安庆</a>
+          </li>
+          <li data-citycode="210300" data-cityname="鞍山">
+            <a href="javascript:;">鞍山</a>
+          </li>
+          <li data-citycode="520400" data-cityname="安顺">
+            <a href="javascript:;">安顺</a>
+          </li>
+          <li data-citycode="410500" data-cityname="安阳">
+            <a href="javascript:;">安阳</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="city-index left-in">
+      <ul>
+        <li>
+          <a href="#当前">当前</a>
+        </li>
+        <li>
+          <a href="#热门">热门</a>
+        </li>
+        <li>
+          <a href="#A">A</a>
+        </li>
+        <li>
+          <a href="#B">B</a>
+        </li>
+        <li>
+          <a href="#C">C</a>
+        </li>
+        <li>
+          <a href="#D">D</a>
+        </li>
+        <li>
+          <a href="#E">E</a>
+        </li>
+        <li>
+          <a href="#F">F</a>
+        </li>
+        <li>
+          <a href="#G">G</a>
+        </li>
+        <li>
+          <a href="#H">H</a>
+        </li>
+        <li>
+          <a href="#J">J</a>
+        </li>
+        <li>
+          <a href="#K">K</a>
+        </li>
+        <li>
+          <a href="#L">L</a>
+        </li>
+        <li>
+          <a href="#M">M</a>
+        </li>
+        <li>
+          <a href="#N">N</a>
+        </li>
+        <li>
+          <a href="#P">P</a>
+        </li>
+        <li>
+          <a href="#Q">Q</a>
+        </li>
+        <li>
+          <a href="#R">R</a>
+        </li>
+        <li>
+          <a href="#S">S</a>
+        </li>
+        <li>
+          <a href="#T">T</a>
+        </li>
+        <li>
+          <a href="#W">W</a>
+        </li>
+        <li>
+          <a href="#X">X</a>
+        </li>
+        <li>
+          <a href="#Y">Y</a>
+        </li>
+        <li>
+          <a href="#Z">Z</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <script>
+  const oCity = document.querySelector('.city-wrap');
+  var oClose = document.querySelector('.close');
+  oClose.addEventListener('click', function() {
+    // alert('fdfd');
+    oCity.classList.remove('top-in');
+  });
+  </script>
+</body>
+</html>
